@@ -1,6 +1,14 @@
 
 .footer {
-  background-color: black;
-  color: #444;
+  background-color: #069b8f;
+  color: white;
   text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
 }

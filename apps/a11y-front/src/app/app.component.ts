@@ -1,13 +1,19 @@
-import {Component} from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {TranslateService} from "@ngx-translate/core";
-import {en} from "./translations/en";
-import {NewsletterComponent} from "./components/newsletter/newsletter.component";
-import {CookieBannerComponent} from "./components/cookie-banner/cookie-banner.component";
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { en } from './translations/en';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, NewsletterComponent, CookieBannerComponent],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    FooterComponent,
+    CookieBannerComponent,
+  ],
   selector: 'a11y-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -40,7 +46,7 @@ export class AppComponent {
   }
 
   private getGeolocation() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         // We will send this over later
         // doSomething(position.coords.latitude, position.coords.longitude);
@@ -50,8 +56,8 @@ export class AppComponent {
 
   private setNotifications() {
     Notification.requestPermission().then((permission) => {
-     if (permission === "granted") {
-       // To use later
+      if (permission === 'granted') {
+        // To use later
       }
     });
   }
