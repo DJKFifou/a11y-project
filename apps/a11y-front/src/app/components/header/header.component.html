@@ -1,33 +1,62 @@
-<div class="header">
-  <div class="header__logo"> a11y Project</div>
-  <div class="header__menu">
-    <a class="header__menu-link" routerLink="/">
-      Home
+<header class="header" role="banner">
+  <a href="" class="header__logo" routerLink="/" aria-label="a11y Project">
+    a11y Project
+  </a>
+  <nav class="header__menu" aria-label="Navigation principale">
+    <a class="header__menu-link" routerLink="/" aria-current="page">
+      Accueil
     </a>
-    <span class="header__menu-link" (click)="goToAbout()">
-      About
-    </span>
-    <span class="header__menu-link" (click)="goToContact()">
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="goToAbout()"
+      role="button"
+    >
+      À propos
+    </a>
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="goToContact()"
+      role="button"
+    >
       Contact
-    </span>
-    <span class="header__menu-link" (click)="goToNews()">
-      News
-    </span>
-    <a class="header__menu-link" routerLink="/lists">
-      Lists
     </a>
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="goToNews()"
+      role="button"
+    >
+      Actualités
+    </a>
+    <a class="header__menu-link" routerLink="/lists"> Listes </a>
     @if (!authService.isLoggedIn()) {
-      <span class="header__menu-link" (click)="goToLogin()">
-      Login
-    </span>
-      <span class="header__menu-link" (click)="goToRegister()">
-      Register
-    </span>
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="goToLogin()"
+      role="button"
+    >
+      Connexion
+    </a>
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="goToRegister()"
+      role="button"
+    >
+      Inscription
+    </a>
     } @else {
-      <span class="header__menu-link" (click)="logout()">
-      Logout
-    </span>
+    <a
+      class="header__menu-link"
+      href="javascript:void(0)"
+      (click)="logout()"
+      role="button"
+    >
+      Déconnexion
+    </a>
     }
-
-  </div>
-</div>
+  </nav>
+</header>
