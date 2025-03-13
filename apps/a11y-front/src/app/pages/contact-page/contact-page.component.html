@@ -13,28 +13,32 @@
       <tr>
         <td>
           <div class="float-left">
-            Name:
+            <p>Name : <span class="star">*</span></p>
             <input
+              type="text"
               [(ngModel)]="data.name"
               name="name"
               required
               #name="ngModel"
               tabindex="1"
               [ngClass]="{ error: name.invalid }"
+              placeholder="Your name"
             />
           </div>
         </td>
         <td>
           <div>
-            Age:
+            <p>Age : <span class="star">*</span></p>
             <input
+              type="number"
               [(ngModel)]="data.age"
               name="age"
               required
               pattern="[1-9][0-9]*"
               #age="ngModel"
               [ngClass]="{ error: age.invalid }"
-              tabindex="3"
+              tabindex="2"
+              placeholder="Your age"
             />
           </div>
         </td>
@@ -42,29 +46,34 @@
       <tr>
         <td>
           <div>
-            Phone number:
+            <p>Phone number : <span class="star">*</span></p>
             <input
+              type="tel"
               [(ngModel)]="data.phoneNumber"
               name="phoneNumber"
               required
-              pattern="\+[0-9]{11}"
+              pattern="0\d{9}"
               #phoneNumber="ngModel"
               [ngClass]="{ error: phoneNumber.invalid }"
-              tabindex="4"
+              tabindex="3"
+              placeholder="Your phone number"
             />
+            
           </div>
         </td>
         <td>
           <div class="float-left">
-            Email
+            <p>Email : <span class="star">*</span></p>
             <input
               type="email"
               [(ngModel)]="data.email"
               name="email"
               required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               #email="ngModel"
               [ngClass]="{ error: email.invalid }"
-              tabindex="2"
+              tabindex="4"
+              placeholder="Your email"
             />
           </div>
         </td>
@@ -74,14 +83,14 @@
         <td colspan="2">
           <div>
             Message : <br />
-            <textarea [(ngModel)]="data.message" name="message"></textarea>
+            <textarea [(ngModel)]="data.message" name="message" tabindex="5" placeholder="Your message"></textarea>
           </div>
         </td>
       </tr>
       @if (contactForm['form'].valid) {
       <tr>
         <td colspan="2">
-          <button type="submit" tabindex="1">Submit</button>
+          <button type="submit" tabindex="6">Submit</button>
         </td>
       </tr>
       }
