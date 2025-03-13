@@ -1,25 +1,41 @@
 .header {
-  height: 56px;
-  background-color: #069b8f;
-  color: aqua;
-  margin-bottom: 1in;
+  height: 10vh;
+  color: #000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 
   &__logo {
-    float:left;
-    padding: 10px;
-    font-size: 3em;
+    float: left;
+    padding: 1rem;
+    font-size: 2rem;
     font-weight: bolder;
   }
 
   &__menu {
-    font-size: 24;
-    padding: 10px;
+    font-size: 1.5rem;
+    padding: 1rem;
 
     & > * {
-      padding: 10px 50px;
-      display:inline-block;
-      color: aquamarine;
-      text-decoration: none !important;
+      padding: 1rem 1.5rem;
+      display: inline-block;
+      color: #003f3a;
+      text-decoration: none;
+
+      &:focus {
+        outline: 1px solid #000;
+        outline-offset: 2px;
+      }
+
+      &:hover {
+        color: #069b8f;
+      }
     }
   }
 }
