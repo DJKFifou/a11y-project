@@ -3,10 +3,10 @@
   
   <h1>Contact us</h1>
   
-  <div class="contact-text">
+  <p class="contact-text">
     If you are so hype about our project and want to contact us, please fill the
     form below. (I did not write this text, Copilot did)
-  </div>
+  </p>
   
   <div class="contact">
     <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
@@ -59,7 +59,6 @@
                 tabindex="3"
                 placeholder="Your phone number"
               />
-              
             </div>
           </td>
           <td>
@@ -83,7 +82,7 @@
         <tr>
           <td colspan="2">
             <div>
-              Message : <br />
+              <p>Message :</p>
               <textarea [(ngModel)]="data.message" name="message" tabindex="5" placeholder="Your message"></textarea>
             </div>
           </td>
