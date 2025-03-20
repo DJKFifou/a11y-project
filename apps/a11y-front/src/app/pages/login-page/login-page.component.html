@@ -1,24 +1,47 @@
-<section>
-  <h1>Register</h1>
-  <div class="login-form">
-    <form #registerForm="ngForm">
-      <div class="form-row">
-        <div class="label">
-          <label for="text">Login: </label>
-        </div>
-        <input type="text" [(ngModel)]="data.email" name="text" id="text" required/>
+
+<main>
+  <div class="form">
+    <h1>Connexion</h1>
+    <form #loginForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email : </label>
+        <input
+          type="email"
+          [(ngModel)]="data.email"
+          placeholder="email@test.com"
+          name="email"
+          id="email"
+          required
+          aria-required="true"
+        />
       </div>
-      <div class="form-row">
-        <div class="label">
-          <label for="pwd">Password:</label>
-        </div>
-        <input type="password" [(ngModel)]="data.password" name="pwd" id="pwd" required (paste)="doNothing($event)" onpaste="event.preventDefault()"/>
+
+      <div class="form-group">
+        <label for="password">Mot de passe :</label>
+        <input
+          type="password"
+          placeholder="************"
+          [(ngModel)]="data.password"
+          name="password"
+          id="password"
+          required
+          aria-required="true"
+        />
       </div>
-  
-      <div class="form-row">
-        <button (click)="reset()">Reset</button>
-        <button (click)="login()" [disabled]="registerForm['form'].invalid">Register</button>
+
+      <div class="form-actions">
+        <button type="button" (click)="reset()" class="btn-secondary">
+          Réinitialiser
+        </button>
+        <button
+          type="submit"
+          (click)="login()"
+          [disabled]="loginForm.invalid"
+          class="btn-primary"
+        >
+          Se connecter
+        </button>
       </div>
     </form>
   </div>
-</section>
+</main>
