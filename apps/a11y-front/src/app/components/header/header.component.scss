@@ -26,11 +26,6 @@
       color: #003f3a;
       text-decoration: none;
 
-      &:focus {
-        outline: 1px solid #000;
-        outline-offset: 2px;
-      }
-
       &:hover {
         color: var(--text-color);
       }
