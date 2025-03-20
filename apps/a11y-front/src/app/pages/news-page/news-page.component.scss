@@ -1,18 +1,32 @@
 .news {
-  padding: 30px 5%;
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    a:-webkit-any-link {
+      text-decoration: none;
+    }
+  }
 
   &__item {
-    border: 1px solid orangered;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border: 1px solid var(--text-color);
+    border-radius: .625rem;
   }
 
   &__header {
-    background: orangered;
+    background: var(--text-color);
     padding: 10px;
+    border-radius: .5rem .5rem 0 0;
+    color: var(--bg-color);
 
     h2 {
       margin: 0;
+
+      a {
+        color: var(--bg-color);
+      }
     }
   }
 
@@ -22,5 +36,6 @@
 
   &__content {
     padding: 10px;
+    color: var(--text-color);
   }
 }
