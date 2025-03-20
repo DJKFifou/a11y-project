@@ -22,3 +22,14 @@
     padding: 10px;
   }
 }
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+  }
+}

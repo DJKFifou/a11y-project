@@ -24,12 +24,10 @@
 
     & > * {
       padding: 1rem 1.5rem;
-      display: inline-block;
       color: #003f3a;
       text-decoration: none;
 
       &:focus {
-        outline: 1px solid #000;
         outline-offset: 2px;
       }
 

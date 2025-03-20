@@ -1,4 +1,3 @@
-
 .footer {
   background-color: #069b8f;
   color: white;
@@ -10,5 +9,24 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
   }
 }

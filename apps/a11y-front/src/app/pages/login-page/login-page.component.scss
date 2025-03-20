@@ -9,10 +9,14 @@
 
   padding: 40px 20px;
   margin-bottom: 50px;
+
+  button {
+    cursor: pointer;
+  }
 }
 
 .label {
-  float:left;
+  float: left;
   min-width: 150px;
 }
 
