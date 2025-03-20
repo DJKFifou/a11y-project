@@ -115,15 +115,8 @@
       line-height: 1.4;
 
       a {
-        color: #9de5e0;
+        color: var(--text-color);
         text-decoration: underline;
-
-        &:hover,
-        &:focus {
-          color: #fff;
-          outline: 2px solid #fff;
-          outline-offset: 2px;
-        }
       }
     }
   }
