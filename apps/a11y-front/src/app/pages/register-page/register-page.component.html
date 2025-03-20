@@ -1,28 +1,59 @@
-<h1>Register</h1>
+<main>
+  <div class="form">
+    <h1>Inscription</h1>
+    <form #registerForm="ngForm">
+      <div class="form-group">
+        <label for="reg-email">Email : </label>
+        <input
+          type="email"
+          [(ngModel)]="data.email"
+          placeholder="email@test.com"
+          name="email"
+          id="reg-email"
+          required
+          aria-required="true"
+        />
+      </div>
 
-<div class="register-form">
-  <form #registerForm="ngForm">
-    <div class="form-row">
-      <div class="label">
-        <label for="email">Email: </label>
+      <div class="form-group">
+        <label for="reg-password">Mot de passe :</label>
+        <input
+          type="password"
+          placeholder="************"
+          [(ngModel)]="data.password"
+          name="password"
+          id="reg-password"
+          required
+          aria-required="true"
+        />
       </div>
-      <input type="email" [(ngModel)]="data.email" name="email" id="email" required/>
-    </div>
-    <div class="form-row">
-      <div class="label">
-        <label for="password">Password:</label>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer le mot de passe :</label>
+        <input
+          type="password"
+          placeholder="************"
+          [(ngModel)]="data.confirmPassword"
+          name="confirmPassword"
+          id="confirmPassword"
+          required
+          aria-required="true"
+        />
       </div>
-      <input type="password" [(ngModel)]="data.password" name="password" id="password" required/>
-    </div>
-    <div class="form-row">
-      <div class="label">
-        <label for="confirmPassword">Confirm Password:</label>
+
+      <div class="form-actions">
+        <button type="button" (click)="reset()" class="btn-secondary">
+          Réinitialiser
+        </button>
+        <button
+          type="submit"
+          (click)="register()"
+          [disabled]="registerForm.invalid"
+          class="btn-primary"
+        >
+          S'inscrire
+        </button>
       </div>
-      <input type="password" [(ngModel)]="data.confirmPassword" name="confirmPassword" id="confirmPassword" required (paste)="doNothing($event)" onpaste="event.preventDefault()"/>
-    </div>
-    <div class="form-row">
-      <button (click)="reset()">Reset</button>
-      <button (click)="register()" [disabled]="registerForm['form'].invalid">Register</button>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+</main>

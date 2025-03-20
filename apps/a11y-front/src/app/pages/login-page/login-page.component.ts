@@ -5,7 +5,6 @@ import {FormsModule} from "@angular/forms";
 import {HeaderComponent} from "../../components/header/header.component";
 import {RegisterModel} from "../register-page/register-page.component";
 import {Auth, signInWithEmailAndPassword} from "@angular/fire/auth";
-import {take} from "rxjs";
 
 export class LoginModel {
   constructor(public password: string, public email: string) {
