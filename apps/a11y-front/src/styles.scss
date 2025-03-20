@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --bg-color: #ffe4c4;
+  --text-color: #06514C;
+}
+
 body {
-  background-color: bisque;
+  background-color: var(--bg-color);
   margin: 0;
 
   a11y-root {
