@@ -16,6 +16,12 @@ body {
   }
 }
 
+section {
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .float-left {
   float: left;
 }

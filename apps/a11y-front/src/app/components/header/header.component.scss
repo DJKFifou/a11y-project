@@ -1,10 +1,9 @@
 .header {
-  height: 10vh;
   color: #000;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem;
 
   a {
     color: #000;
@@ -13,17 +12,16 @@
 
   &__logo {
     float: left;
-    padding: 1rem;
     font-size: 2rem;
     font-weight: bolder;
   }
 
   &__menu {
+    display: flex;
+    gap: 1.5rem;
     font-size: 1rem;
-    padding: 1rem;
 
     & > * {
-      padding: 1rem 1.5rem;
       display: inline-block;
       color: #003f3a;
       text-decoration: none;
@@ -34,7 +32,7 @@
       }
 
       &:hover {
-        color: #069b8f;
+        color: var(--text-color);
       }
     }
   }

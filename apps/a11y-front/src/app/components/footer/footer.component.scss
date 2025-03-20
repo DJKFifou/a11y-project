@@ -1,10 +1,9 @@
 
 .footer {
-  background-color: #069b8f;
+  background-color: var(--text-color);
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 1rem;
 
   form {
     display: flex;
