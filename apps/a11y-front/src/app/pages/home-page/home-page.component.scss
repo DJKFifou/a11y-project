@@ -7,7 +7,7 @@
   &__title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #057b72;
+    color: var(--text-color);
     margin-bottom: 4rem;
     text-align: center;
   }
@@ -46,7 +46,7 @@
 
     a {
       text-decoration: underline;
-      color: #057b72;
+      color: var(--text-color);
 
       &:hover,
       &:focus {
@@ -78,7 +78,7 @@
 
 .section--2 {
   .section__title {
-    color: #057b72;
+    color: var(--text-color);
   }
 
   .section__content {
@@ -90,7 +90,7 @@
   .card {
     width: 20%;
     margin: 0.75rem;
-    border: 1px solid #057b72;
+    border: 1px solid var(--text-color);
     border-radius: 0.5rem;
     background-color: white;
 
@@ -105,7 +105,7 @@
     &__header {
       color: #fff;
       margin: 0;
-      background-color: #057b72;
+      background-color: var(--text-color);
       text-align: center;
       font-size: 1.25rem;
       font-weight: bold;
@@ -227,7 +227,7 @@
       color: #333;
 
       a {
-        color: #057b72;
+        color: var(--text-color);
         text-decoration: underline;
 
         &:hover,
