@@ -1,100 +1,92 @@
 <section>
   <a href="/">&larr; Back</a>
-  
-  <h1>Contact us</h1>
-  
-  <p class="contact-text">
-    If you are so hype about our project and want to contact us, please fill the
-    form below. (I did not write this text, Copilot did)
-  </p>
-  
-  <div class="contact">
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-      <table class="no-border">
-        <tr>
-          <td>
-            <div class="float-left">
-              <p>Name : <span class="star">*</span></p>
-              <input
-                type="text"
-                [(ngModel)]="data.name"
-                name="name"
-                required
-                #name="ngModel"
-                tabindex="1"
-                [ngClass]="{ error: name.invalid }"
-                placeholder="Your name"
-              />
-            </div>
-          </td>
-          <td>
-            <div>
-              <p>Age : <span class="star">*</span></p>
-              <input
-                type="number"
-                [(ngModel)]="data.age"
-                name="age"
-                required
-                pattern="[1-9][0-9]*"
-                #age="ngModel"
-                [ngClass]="{ error: age.invalid }"
-                tabindex="2"
-                placeholder="Your age"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div>
-              <p>Phone number : <span class="star">*</span></p>
-              <input
-                type="tel"
-                [(ngModel)]="data.phoneNumber"
-                name="phoneNumber"
-                required
-                pattern="0\d{9}"
-                #phoneNumber="ngModel"
-                [ngClass]="{ error: phoneNumber.invalid }"
-                tabindex="3"
-                placeholder="Your phone number"
-              />
-            </div>
-          </td>
-          <td>
-            <div class="float-left">
-              <p>Email : <span class="star">*</span></p>
-              <input
-                type="email"
-                [(ngModel)]="data.email"
-                name="email"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                #email="ngModel"
-                [ngClass]="{ error: email.invalid }"
-                tabindex="4"
-                placeholder="Your email"
-              />
-            </div>
-          </td>
-        </tr>
-  
-        <tr>
-          <td colspan="2">
-            <div>
-              <p>Message :</p>
-              <textarea [(ngModel)]="data.message" name="message" tabindex="5" placeholder="Your message"></textarea>
-            </div>
-          </td>
-        </tr>
+
+  <div class="content">
+    <h1>Contact us</h1>
+
+    <p class="contact-text">
+      If you are so hype about our project and want to contact us, please fill
+      the form below. (I did not write this text, Copilot did)
+    </p>
+
+    <div class="contact-form">
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="user-infos">
+          <div class="form-group">
+            <label>Name : <span class="star">*</span></label>
+            <input
+              type="text"
+              [(ngModel)]="data.name"
+              name="name"
+              required
+              #name="ngModel"
+              tabindex="1"
+              [ngClass]="{ error: name.invalid }"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Age : <span class="star">*</span></label>
+            <input
+              type="number"
+              [(ngModel)]="data.age"
+              name="age"
+              required
+              pattern="[1-9][0-9]*"
+              #age="ngModel"
+              [ngClass]="{ error: age.invalid }"
+              tabindex="2"
+              placeholder="Your age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Phone number : <span class="star">*</span></label>
+            <input
+              type="tel"
+              [(ngModel)]="data.phoneNumber"
+              name="phoneNumber"
+              required
+              pattern="0\d{9}"
+              #phoneNumber="ngModel"
+              [ngClass]="{ error: phoneNumber.invalid }"
+              tabindex="3"
+              placeholder="Your phone number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Email : <span class="star">*</span></label>
+            <input
+              type="email"
+              [(ngModel)]="data.email"
+              name="email"
+              required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              #email="ngModel"
+              [ngClass]="{ error: email.invalid }"
+              tabindex="4"
+              placeholder="Your email"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message :</label>
+          <textarea
+            [(ngModel)]="data.message"
+            name="message"
+            tabindex="5"
+            placeholder="Your message"
+          ></textarea>
+        </div>
+
         @if (contactForm['form'].valid) {
-        <tr>
-          <td colspan="2">
-            <button type="submit" tabindex="6">Submit</button>
-          </td>
-        </tr>
+        <div class="form-actions">
+          <button type="submit" tabindex="6">Submit</button>
+        </div>
         }
-      </table>
-    </form>
+      </form>
+    </div>
   </div>
 </section>
