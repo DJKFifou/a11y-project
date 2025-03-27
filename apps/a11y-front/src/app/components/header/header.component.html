@@ -2,7 +2,31 @@
   <a href="" class="header__logo" routerLink="/" aria-label="a11y Project">
     a11y Project
   </a>
-  <nav class="header__menu" aria-label="Navigation principale">
+
+  <button
+    class="header__burger-btn"
+    aria-label="Ouvrir le menu"
+    [attr.aria-expanded]="isMenuOpen"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav
+    class="header__menu"
+    [class.header__menu--open]="isMenuOpen"
+    aria-label="Navigation principale"
+  >
+    <button
+      class="header__close-btn"
+      aria-label="Fermer le menu"
+      (click)="toggleMenu()"
+    >
+      &times;
+    </button>
+
     <a class="header__menu-link" routerLink="/" aria-current="page">
       Accueil
     </a>
