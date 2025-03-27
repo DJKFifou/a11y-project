@@ -1,9 +1,17 @@
 <div class="footer">
-    <p>Created with Passion (and a bit of sadism) by Fred. &copy; HemIT 2023 (although not sure we want to be made accountable for this...)</p>
+    <div class="footer__links">
+        <a href="javascript:void(0)"
+        (click)="goToLegal()"
+        role="button">Mentions légales</a>
+        <a href="javascript:void(0)"
+        (click)="goToConfidentiality()"
+        role="button">Politique de confidentialité</a>
+    </div>
     <div class="newsletter__form">
         <form (ngSubmit)="signIn()" #newsletterForm="ngForm">
             <input class="newsletter__input" type="text" placeholder="Your email address" [(ngModel)]="email" required>
             <button class="newsletter__button" type="submit" [disabled]="newsletterForm['form'].invalid">Register!</button>
         </form>
     </div>
+    <p>Created with Passion (and a bit of sadism) by Fred. &copy; HemIT 2023 (although not sure we want to be made accountable for this...)</p>
 </div>
