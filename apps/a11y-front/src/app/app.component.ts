@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { en } from './translations/en';
+import { fr } from './translations/fr';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
@@ -27,21 +28,26 @@ export class AppComponent {
     this.setNotifications();
   }
 
-  private manageTranslations() {
-    // If you need to add a language, add it to the table below, and add a new "translate.setTranslation" line as well.
-    const availableLanguages = ['en'];
-    this.translate.setTranslation('en', en);
-    this.translate.setDefaultLang(availableLanguages[0]);
+  private availableLanguages = ['fr', 'en'];
 
-    // This is a very basic language management system. It does not manage locales (en-US, en-GB, etc.), and the files
-    // are imported statically. It might not scale well if we get so many translations.
+  private manageTranslations() {
+    this.translate.setTranslation('fr', fr);
+    this.translate.setTranslation('en', en);
+    this.translate.setDefaultLang('fr');
+
     const browserLanguages = window.navigator?.languages || [];
     for (const language of browserLanguages) {
       const languageCode = language.split('-')[0]?.toLowerCase();
-      if (availableLanguages.indexOf(languageCode) >= 0) {
+      if (this.availableLanguages.includes(languageCode)) {
         this.translate.use(languageCode);
         return;
       }
+    }
+  }
+
+  changeLanguage(lang: string) {
+    if (this.availableLanguages.includes(lang)) {
+      this.translate.use(lang);
     }
   }
 

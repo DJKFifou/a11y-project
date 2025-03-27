@@ -28,7 +28,7 @@
     </button>
 
     <a class="header__menu-link" routerLink="/" aria-current="page">
-      Accueil
+      {{'header.home' | translate}}
     </a>
     <a
       class="header__menu-link"
@@ -36,7 +36,7 @@
       (click)="goToAbout()"
       role="button"
     >
-      À propos
+    {{'header.about' | translate}}
     </a>
     <a
       class="header__menu-link"
@@ -44,7 +44,7 @@
       (click)="goToContact()"
       role="button"
     >
-      Contact
+    {{'header.contact' | translate}}
     </a>
     <a
       class="header__menu-link"
@@ -52,9 +52,9 @@
       (click)="goToNews()"
       role="button"
     >
-      Actualités
+    {{'header.news' | translate}}
     </a>
-    <a class="header__menu-link" routerLink="/lists"> Listes </a>
+    <a class="header__menu-link" routerLink="/lists"> {{'header.lists' | translate}} </a>
     @if (!authService.isLoggedIn()) {
     <a
       class="header__menu-link"
@@ -62,7 +62,7 @@
       (click)="goToLogin()"
       role="button"
     >
-      Connexion
+    {{'header.login' | translate}}
     </a>
     <a
       class="header__menu-link"
@@ -70,7 +70,7 @@
       (click)="goToRegister()"
       role="button"
     >
-      Inscription
+    {{'header.register' | translate}}
     </a>
     } @else {
     <a
@@ -79,8 +79,12 @@
       (click)="logout()"
       role="button"
     >
-      Déconnexion
+    {{'header.logout' | translate}}
     </a>
     }
+    <select (change)="changeLanguage($event)" aria-label="Sélection de la langue">
+      <option value="fr" [selected]="currentLanguage === 'fr'">FR</option>
+      <option value="en" [selected]="currentLanguage === 'en'">EN</option>
+    </select>
   </nav>
 </header>

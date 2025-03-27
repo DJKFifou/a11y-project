@@ -2,16 +2,16 @@
     <div class="footer__links">
         <a href="javascript:void(0)"
         (click)="goToLegal()"
-        role="button">Mentions légales</a>
+        role="button">{{'footer.legal' | translate}}</a>
         <a href="javascript:void(0)"
         (click)="goToConfidentiality()"
-        role="button">Politique de confidentialité</a>
+        role="button">{{'footer.confidentiality' | translate}}</a>
     </div>
     <div class="newsletter__form">
         <form (ngSubmit)="signIn()" #newsletterForm="ngForm">
-            <input class="newsletter__input" type="text" placeholder="Your email address" [(ngModel)]="email" required>
-            <button class="newsletter__button" type="submit" [disabled]="newsletterForm['form'].invalid">Register!</button>
+            <input class="newsletter__input" type="text" placeholder="{{'footer.form.input.placeholder' | translate}}" [(ngModel)]="email" required>
+            <button class="newsletter__button" type="submit" [disabled]="newsletterForm['form'].invalid">{{'footer.form.button.text' | translate}}</button>
         </form>
     </div>
-    <p>Created with Passion (and a bit of sadism) by Fred. &copy; HemIT 2023 (although not sure we want to be made accountable for this...)</p>
+    <p>{{'footer.text' | translate}}</p>
 </div>
