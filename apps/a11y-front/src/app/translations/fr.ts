@@ -1,46 +1,41 @@
-/** This only exists in English, but you can duplicate it and translate it in other languages
- * Then you need to declare the language in app.component.ts */
-
-import { on } from 'events';
-
-export const en = {
+export const fr = {
   header: {
-    home: 'Home',
-    about: 'About',
+    home: 'Accueil',
+    about: 'À propos',
     contact: 'Contact',
-    news: 'News',
-    lists: 'Lists',
-    register: 'Register',
-    login: 'Login',
-    logout: 'Logout',
+    news: 'Actualités',
+    lists: 'Listes',
+    register: 'Inscripiton',
+    login: 'Connexion',
+    logout: 'Déconnexion',
   },
   footer: {
-    legal: 'Legal notices',
-    confidentiality: 'Privacy Policy',
+    legal: 'Mentions légales',
+    confidentiality: 'Politique de confidentialité',
     form: {
       input: {
-        placeholder: 'Your email adress',
+        placeholder: 'Votre adresse mail',
       },
       button: {
-        text: 'Register!',
+        text: "S'enregistrer",
       },
     },
-    text: 'Created with Passion (and a bit of sadism) by Fred. &copy; HemIT 2023 (although not sure we want to be made accountable for this...)',
+    text: 'Créé avec Passion (et un peu de sadisme) par Fred. &copy; HemIT 2023 (même si on est pas sûr de vouloir être rendu responsable de ça...)',
   },
   cookie_banner: {
     title: 'Cookies',
-    text_first: 'This site uses cookies to improve your experience.',
+    text_first: 'Ce site utilise des cookies pour améliorer votre expérience.',
     text_second:
-      'This includes functional, targeted ads and social networks cookies.',
+      'Cela inclut les cookies fonctionnels, les publicités ciblées et les réseaux sociaux.',
     button: {
       text: 'Ok',
     },
   },
   aboutPage: {
-    title: 'About',
-    text: 'There is nothing much to see here yet. Not sure you want to know who we are.',
+    title: 'À propos',
+    text: "Il n'y a pas grand chose à voir ici pour le moment. Pas sûr que vous vouliez savoir qui nous sommes.",
     button: {
-      text: 'Go back',
+      text: 'Retour',
     },
   },
   homePage: {
@@ -64,19 +59,19 @@ export const en = {
     },
     section_2: {
       title: 'Our strengths',
-      card1: {
+      card_1: {
         title: 'Expertise',
         text: 'Our developers and designers all have 20+ years of experience. They work with the pioneers of the web.',
       },
-      card2: {
+      card_2: {
         title: 'Attention to details',
         text: 'We scrutinize and polish every single pixel of this website for the best experience ever.',
       },
-      card3: {
+      card_3: {
         title: 'Up to date',
         text: "We follow the latest standards such as HTML5 and CSS3. We're quite proud to be that up to date.",
       },
-      card4: {
+      card_4: {
         title: 'Support',
         text: 'We are easily accessible through the contact form that you can reach',
         link: {

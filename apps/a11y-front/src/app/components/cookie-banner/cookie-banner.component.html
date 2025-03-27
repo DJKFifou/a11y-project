@@ -1,8 +1,8 @@
 @if (showCookieBanner) {
   <div class="banner">
-    <h1> Cookies </h1>
-    <p> This site uses cookies to improve your experience. </p>
-    <p> This includes functional, targeted ads and social networks cookies. </p>
-    <button class="button" (click)="dismissBanner()"> Ok </button>
+    <h1> {{'cookie_banner.title' | translate}} </h1>
+    <p> {{'cookie_banner.text_first' | translate}} </p>
+    <p> {{'cookie_banner.text_second' | translate}} </p>
+    <button class="button" (click)="dismissBanner()"> {{'cookie_banner.button.text' | translate}} </button>
   </div>
 }

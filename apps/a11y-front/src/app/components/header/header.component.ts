@@ -2,11 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'a11y-header',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -36,5 +38,18 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  constructor(public translate: TranslateService) {}
+
+  changeLanguage(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    if (target) {
+      this.translate.use(target.value);
+    }
+  }
+
+  get currentLanguage(): string {
+    return this.translate.currentLang || 'fr';
   }
 }
