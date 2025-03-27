@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -13,28 +13,77 @@ import { AuthService } from '../../services/auth.service';
 export class HeaderComponent {
   private router = inject(Router);
   authService = inject(AuthService);
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    document.body.classList.toggle('menu-open', this.isMenuOpen);
+    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+
+    const menuElement = document.querySelector('.header__menu');
+    const burgerButton = document.querySelector('.header__burger-btn');
+
+    if (menuElement) {
+      menuElement.setAttribute('aria-hidden', (!this.isMenuOpen).toString());
+    }
+
+    if (burgerButton) {
+      burgerButton.setAttribute('aria-expanded', this.isMenuOpen.toString());
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (
+      this.isMenuOpen &&
+      !target.closest('.header__menu') &&
+      !target.closest('.header__burger-btn')
+    ) {
+      this.toggleMenu();
+    }
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (this.isMenuOpen && window.innerWidth > 768) {
+      this.isMenuOpen = false;
+      document.body.style.overflow = '';
+    }
+  }
+
+  private navigateTo(path: string) {
+    this.router.navigateByUrl(path).then(() => {
+      if (this.isMenuOpen) {
+        this.toggleMenu();
+      }
+    });
+  }
 
   goToContact() {
-    this.router.navigateByUrl('/contact');
+    this.navigateTo('/contact');
   }
 
   goToAbout() {
-    this.router.navigateByUrl('/about');
+    this.navigateTo('/about');
   }
 
   goToRegister() {
-    this.router.navigateByUrl('/register');
+    this.navigateTo('/register');
   }
 
   goToLogin() {
-    this.router.navigateByUrl('/login');
+    this.navigateTo('/login');
   }
 
   goToNews() {
-    this.router.navigateByUrl('/news');
+    this.navigateTo('/news');
   }
 
   logout() {
     this.authService.logout();
+    if (this.isMenuOpen) {
+      this.toggleMenu();
+    }
   }
 }
