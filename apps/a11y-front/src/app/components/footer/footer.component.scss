@@ -1,13 +1,32 @@
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background-color: var(--text-color);
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+}
 
   form {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
   }
 }
